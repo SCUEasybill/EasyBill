@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/libs/MobCommons-2016.0223.1655.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/MobTools-2016.0223.1655.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/SMSSDK-2.0.2.aar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/SMSSDKGUI-2.0.2.aar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/activation.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/additionnal.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/mail.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/back.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/next.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/forget_findpsw.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/forget_ph_em.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login_titlebar.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_findpsw_titlebar.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_titlebar.xml" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
