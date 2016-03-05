@@ -35,7 +35,7 @@ public class SetNewPsw extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {//加入自定义标题
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.forget_findpsw);
+        setContentView(R.layout.login_forget_findpsw);
         Intent intent = getIntent();
         action = intent.getStringExtra("action");//获取登陆状态
         ph_emNum = intent.getStringExtra("ph_emNum");

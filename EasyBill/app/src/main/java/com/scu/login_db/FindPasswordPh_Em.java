@@ -3,7 +3,6 @@ import static com.scu.login_db.ConstantsUtil.*;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -44,7 +43,7 @@ public class FindPasswordPh_Em extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.forget_ph_em);
+        setContentView(R.layout.login_forget_ph_em);
         edtPhoneNum = (EditText) findViewById(R.id.edt_phoneNum);
         edtYanzhengma = (EditText) findViewById(R.id.edt_yanzhengma);
         tvGetYanzhengma  =(TextView) findViewById(R.id.tv_getYanzhengma);

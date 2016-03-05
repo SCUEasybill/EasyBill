@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.scu.login_db.Login;
 import com.scu.login_db.SetNewPsw;
+import com.scu.login_db.UserInfo;
 
 import static com.scu.login_db.ConstantsUtil.*;
 import custom.view.FragmentFactory;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);//加载主布局
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,17 +62,17 @@ public class MainActivity extends AppCompatActivity
             }
         });
         ((RadioButton)findViewById(R.id.radiobutton_main)).setChecked(true);
-
-        ImageView imvHeader = (ImageView) findViewById(R.id.imv_header_main);
-        imvHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this,Login.class);
-                    intent.putExtra("active",LOGIN);
-                    startActivity(intent);
-            }
-        });
-
+    //头部 昵称
+        //        ImageView imvHeader = (ImageView) findViewById(R.id.imv_header_main);
+//        Toast.makeText(getApplicationContext(),"imvhe"+imvHeader,Toast.LENGTH_LONG).show();
+//        imvHeader.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Login.class);
+//                intent.putExtra("active", LOGIN);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -117,9 +119,10 @@ public class MainActivity extends AppCompatActivity
             CategoryActivity.activityStart(this);
         } else if (id == R.id.nav_more) {
 //            MoreActivity.activityStart(this);
-            Intent intent = new Intent(MainActivity.this, SetNewPsw.class);
-            intent.putExtra("action",REGISTER);
-            intent.putExtra("ph_emNum","13678109397");
+//            Intent intent = new Intent(MainActivity.this, SetNewPsw.class);
+//            intent.putExtra("action",REGISTER);
+//            intent.putExtra("ph_emNum","13678109397");
+            Intent intent = new Intent(MainActivity.this, UserInfo.class);
             startActivity(intent);
         } else if (id == R.id.nav_setting) {
             SettingActivity.activityStart(this);

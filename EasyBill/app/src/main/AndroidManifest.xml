@@ -46,6 +46,9 @@
             ></activity>
         <activity android:name="com.scu.login_db.FindPasswordPh_Em"
             ></activity>
+        <activity android:name="com.scu.login_db.UserInfo"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="个人信息"></activity>
         <!-- 登陆注册部分-->
     </application>
 

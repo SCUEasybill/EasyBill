@@ -34,7 +34,7 @@
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.forget_findpsw);
+//        setContentView(R.layout.login_forget_findpsw);
 //
 //        //添加titlebar[开始]
 //        registerTitlebar = (Toolbar) findViewById(R.id.register_titlebar);

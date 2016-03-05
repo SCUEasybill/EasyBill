@@ -11,9 +11,9 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/back.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/next.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/forget_findpsw.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/forget_ph_em.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login_forget_findpsw.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login_forget_ph_em.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/login_titlebar.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_findpsw_titlebar.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_titlebar.xml" charset="UTF-8" />
