@@ -3,7 +3,6 @@ package xyz.anmai.easybill;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,16 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.scu.login_db.Login;
-import com.scu.login_db.SetNewPsw;
-
-import static com.scu.login_db.ConstantsUtil.*;
 import custom.view.FragmentFactory;
 
 public class MainActivity extends AppCompatActivity
@@ -60,17 +53,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
         ((RadioButton)findViewById(R.id.radiobutton_main)).setChecked(true);
-
-        ImageView imvHeader = (ImageView) findViewById(R.id.imv_header_main);
-        imvHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this,Login.class);
-                    intent.putExtra("active",LOGIN);
-                    startActivity(intent);
-            }
-        });
-
     }
 
     @Override
@@ -116,11 +98,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_category) {
             CategoryActivity.activityStart(this);
         } else if (id == R.id.nav_more) {
-//            MoreActivity.activityStart(this);
-            Intent intent = new Intent(MainActivity.this, SetNewPsw.class);
-            intent.putExtra("action",REGISTER);
-            intent.putExtra("ph_emNum","13678109397");
-            startActivity(intent);
+            MoreActivity.activityStart(this);
         } else if (id == R.id.nav_setting) {
             SettingActivity.activityStart(this);
         } else if (id == R.id.nav_share) {
