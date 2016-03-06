@@ -14,18 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.scu.login_db.Login;
 import com.scu.login_db.SetNewPsw;
 import com.scu.login_db.UserInfo;
 
-import static com.scu.login_db.ConstantsUtil.*;
 import custom.view.FragmentFactory;
+
+import static com.scu.login_db.ConstantsUtil.REGISTER;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,7 +46,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        //nav-header-main
+//        ImageView imageView_header = (ImageView)findViewById(R.id.imv_header_main);
+//
+//        imageView_header.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Login.class);
+//                startActivity(intent);
+//            }
+//        });
         fragmentManager = getFragmentManager();
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -62,17 +69,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
         ((RadioButton)findViewById(R.id.radiobutton_main)).setChecked(true);
-    //头部 昵称
-        //        ImageView imvHeader = (ImageView) findViewById(R.id.imv_header_main);
-//        Toast.makeText(getApplicationContext(),"imvhe"+imvHeader,Toast.LENGTH_LONG).show();
-//        imvHeader.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, Login.class);
-//                intent.putExtra("active", LOGIN);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -125,7 +121,11 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, UserInfo.class);
             startActivity(intent);
         } else if (id == R.id.nav_setting) {
-            SettingActivity.activityStart(this);
+//            SettingActivity.activityStart(this);
+            Intent intent = new Intent(MainActivity.this, SetNewPsw.class);
+            intent.putExtra("action",REGISTER);
+            intent.putExtra("ph_emNum","13678109397");
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
             Toast.makeText(this, "感谢您点击分享！", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {

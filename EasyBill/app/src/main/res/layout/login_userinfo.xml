@@ -53,16 +53,11 @@
                 android:paddingTop="@dimen/nav_header_vertical_spacing"
                 android:text="昵称"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
         </LinearLayout>
-
     </LinearLayout>
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView" >
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60px" />
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -71,15 +66,17 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ListView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/lv_userinfo" />
 
             </LinearLayout>
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60px" />
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -94,7 +91,7 @@
                     android:width="@dimen/btn_exit"
                     android:id="@+id/btn_exit" />
             </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>

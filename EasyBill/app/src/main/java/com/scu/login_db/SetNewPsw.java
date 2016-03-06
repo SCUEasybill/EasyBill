@@ -1,5 +1,4 @@
 package com.scu.login_db;
-import static com.scu.login_db.ConstantsUtil.*;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,15 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
 
 import xyz.anmai.easybill.R;
+
+import static com.scu.login_db.ConstantsUtil.FINDPASSWORD;
+import static com.scu.login_db.ConstantsUtil.REGISTER;
+import static com.scu.login_db.ConstantsUtil.SERVER_ADDRESS;
+import static com.scu.login_db.ConstantsUtil.SERVER_PORT;
 
 /**
  * Created by guyu on 2016/3/1.
@@ -31,7 +32,6 @@ public class SetNewPsw extends AppCompatActivity{
     String oldPsw, newPsw1,newPsw2;
     ProgressDialog ps;
     MyConnector mc = null;
-    Toolbar setPswTitlebar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {//加入自定义标题
         super.onCreate(savedInstanceState);
@@ -41,14 +41,14 @@ public class SetNewPsw extends AppCompatActivity{
         ph_emNum = intent.getStringExtra("ph_emNum");
         Toast.makeText(SetNewPsw.this,"action=="+action+ph_emNum,Toast.LENGTH_SHORT).show();
         //添加titlebar[开始]
-        setPswTitlebar = (Toolbar) findViewById(R.id.register_titlebar);
+        Toolbar setPswTitlebar = (Toolbar) findViewById(R.id.register_titlebar);
         if(action.equals(REGISTER)){//没有登陆，不显示旧密码
-            setPswTitlebar.setTitle("注册");
+            setTitle("用户注册");
 //            LinearLayout linearLayout_oldPsw = (LinearLayout) findViewById(R.id.layout_oldPsw);
             findViewById(R.id.layout_oldPsw).setVisibility(View.GONE);
             Toast.makeText(SetNewPsw.this,"不显示旧密码",Toast.LENGTH_SHORT).show();
         }else if(action.equals(FINDPASSWORD)){
-            setPswTitlebar.setTitle("找回密码");
+            setTitle("找回密码");
             findViewById(R.id.layout_name).setVisibility(View.GONE);
             Toast.makeText(SetNewPsw.this,"不显示昵称框",Toast.LENGTH_SHORT).show();
         }
