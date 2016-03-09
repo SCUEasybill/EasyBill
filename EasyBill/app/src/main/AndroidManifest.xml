@@ -50,6 +50,11 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:label="个人信息"></activity>
         <!-- 登陆注册部分-->
+
+        <!--单元测试-->
+        <activity android:name="com.scu.login_db.TestClass"
+            android:label="测试"></activity>
+        <!--单元测试-->
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
