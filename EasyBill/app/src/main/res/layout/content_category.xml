@@ -138,14 +138,13 @@
         style="@style/straight_line"
         android:layout_below="@+id/mctv_2"
         android:id="@+id/straight_line_6" />
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/category_recyclerview_horizontal"
         android:layout_below="@+id/straight_line_6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <android.support.v4.view.ViewPager
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
-    </LinearLayout>
+        android:scrollbars="none"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

@@ -67,5 +67,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_setting">设置</string>
-    <string name="title_activity_more">MoreActivity</string>
+    <string name="title_activity_more">更多</string>
 </resources>

@@ -31,7 +31,7 @@
 
     <style name="straight_line">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:background">#FF909090</item>
@@ -52,6 +52,65 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- 这是主fragment中分类图标的样式 -->
+    <style name="fragment_main_imageview">
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 这是主fragment中包含分类图标的linearlayout的样式 -->
+    <style name="fragment_main_linearlayout_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:baselineAligned">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 设置界面的每一项设置的样式-->
+    <style name="lebal_bg_layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/lebal_shape_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+    </style>
+
+    <!-- 设置界面单行显示的效果-->
+    <style name="lebal_bg_single_layout" parent="@style/lebal_bg_base_layout">
+        <item name="android:background">@drawable/lebal_bg_single_selector</item>
+    </style>
+    <!-- 设置界面 上 显示的效果-->
+    <style name="lebal_bg_top_layout" parent="@style/lebal_bg_base_layout">
+        <item name="android:background">@drawable/lebal_bg_top_selector</item>
+    </style>
+    <!-- 设置界面 中 显示的效果-->
+    <style name="lebal_bg_mid_layout" parent="@style/lebal_bg_base_layout">
+        <item name="android:background">@drawable/lebal_bg_mid_selector</item>
+    </style>
+    <!-- 设置界面 下 显示的效果-->
+    <style name="lebal_bg_bottom_layout" parent="@style/lebal_bg_base_layout">
+        <item name="android:background">@drawable/lebal_bg_bottom_selector</item>
+    </style>
+
+    <style name="lebal_bg_base_layout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">16.0dip</item>
+        <item name="android:paddingBottom">16.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
     </style>
 
 </resources>

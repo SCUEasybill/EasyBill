@@ -8,7 +8,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -17,12 +16,19 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import custom.view.FragmentFactory;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity
+import custom.view.BaseActivity;
+
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
     private FragmentManager fragmentManager;
+    private List<Fragment> fragments = new ArrayList<Fragment>();//缓存fragment
+    private MainFragment mainFragment = null;
+    private DetailsFragment detailsFragment = null;
+    private ReportFragment reportFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +46,50 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        mainFragment = new MainFragment();
+        detailsFragment = new DetailsFragment();
+        reportFragment = new ReportFragment();
+        fragments.add(mainFragment);
+        fragments.add(detailsFragment);
+        fragments.add(reportFragment);
+
         fragmentManager = getFragmentManager();
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rg_tab);
+        final RadioButton mainRadioButton = (RadioButton) findViewById(R.id.radiobutton_main);
+        final RadioButton detailsRadioButton = (RadioButton) findViewById(R.id.radiobutton_details);
+        final RadioButton reportRadioButton = (RadioButton) findViewById(R.id.radiobutton_report);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 //                Log.e("Main","checkedid="+checkedId);
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-                Fragment fragment = FragmentFactory.getInstanceByIndex(checkedId);
-                transaction.replace(R.id.main_content, fragment);
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                switch (checkedId){
+                    case R.id.radiobutton_main:
+                        mainRadioButton.setChecked(true);
+                        transaction.show(mainFragment).hide(detailsFragment).hide(reportFragment);
+                        break;
+                    case R.id.radiobutton_details:
+                        detailsRadioButton.setChecked(true);
+                        transaction.show(detailsFragment).hide(mainFragment).hide(reportFragment);
+                        break;
+                    case R.id.radiobutton_report:
+                        reportRadioButton.setChecked(true);
+                        transaction.show(reportFragment).hide(detailsFragment).hide(mainFragment);
+                        break;
+                }
                 transaction.commit();
             }
         });
-        ((RadioButton)findViewById(R.id.radiobutton_main)).setChecked(true);
+        if (!mainRadioButton.isChecked()){
+            mainRadioButton.setChecked(true);
+        }
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.main_content, mainFragment);
+        transaction.add(R.id.main_content, detailsFragment);
+        transaction.add(R.id.main_content, reportFragment);
+        transaction.show(mainFragment).hide(detailsFragment).hide(reportFragment);
+        transaction.commitAllowingStateLoss();
     }
 
     @Override

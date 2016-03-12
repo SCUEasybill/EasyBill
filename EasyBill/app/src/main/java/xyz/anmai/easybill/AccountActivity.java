@@ -19,10 +19,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import custom.view.BaseActivity;
 import custom.view.ListViewCompat;
 import custom.view.SlideView;
 
-public class AccountActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener, SlideView.OnSlideListener {
+public class AccountActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener, SlideView.OnSlideListener {
 
     public static void activityStart(Context context) {
         Intent intent = new Intent(context, AccountActivity.class);
